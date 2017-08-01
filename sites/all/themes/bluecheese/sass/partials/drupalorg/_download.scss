@@ -1,0 +1,46 @@
+// Download and Extend page at /download
+@include breakpoint($small) {
+  .download-facets {
+    @include clearfix;
+
+    .main {
+      @include span-columns(6);
+    }
+
+    .aside {
+      @include span-columns(3);
+
+      &:last-child {
+        @include omega;
+      }
+    }
+  }
+}
+
+#content .download-facets h4 {
+  margin: 0;
+}
+
+// “Show only … version” form
+#drupalorg-download-version-form {
+  background: $new-lt-gray;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+
+  label,
+  select,
+  .form-item,
+  .form-submit {
+    display: inline;
+    margin: 0 .5em 0 0;
+  }
+  label {
+    font-weight: normal;
+  }
+}
+
+@include breakpoint(0 $medium) {
+  #drupalorg-download-version-form .form-submit {
+    margin: 0.5em 0 0 0;
+  }
+}

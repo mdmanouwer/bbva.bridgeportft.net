@@ -1,0 +1,81 @@
+#page {
+  flex: auto;
+  margin-bottom: 2.077em;
+  margin-top: 1.385em;
+}
+
+@include breakpoint($medium) {
+  #main {
+    @include span-columns(12 omega);
+    z-index: 1;
+  }
+  .one-sidebar,
+  .two-sidebars,
+  .node-type-forum {
+    #main {
+      @include span-columns(8);
+    }
+  }
+
+  #aside,
+  #sidebar-first {
+    @include span-columns(4 omega);
+  }
+
+  #aside {
+    clear: right; // Stack under #sidebar-first.
+  }
+
+  .page-title-wrapper {
+    @include span-columns(8);
+  }
+  #page-tools {
+    @include span-columns(4 omega);
+  }
+}
+
+// This is how we fix nested classes that are in content for now
+// todo: remove grid classes post upgrade
+.one-sidebar,
+.two-sidebars {
+  #main .grid-4 {
+    @include span-columns(4,8);
+  }
+}
+.one-sidebar,
+.two-sidebars {
+  #main .grid-4.omega {
+    @include omega();
+  }
+}
+
+// todo: check if needed, page-titles are h1 everywhere
+div#page-title {
+  margin-top: 0;
+}
+
+#page-subtitle {
+  margin-top: 0;
+}
+
+.breadcrumb {
+  padding-bottom: 0;
+  span:not(:first-child):before {
+    content: ' » ';
+  }
+}
+
+// 'Add X to dashboard' link
+#page-tools {
+  margin: 0.692em 0 0;
+  text-align: right;
+
+  a {
+    color: $new-dk-green;
+  }
+}
+
+// Underneath both content and sidebar.
+#content-bottom-region {
+  clear: both;
+}

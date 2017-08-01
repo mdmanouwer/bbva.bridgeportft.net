@@ -1,0 +1,149 @@
+// User profile pages, /user/N
+.profile {
+  h3 {
+    border-bottom: none; // Reset core style.
+    clear: both;
+    margin: 1em 0;
+  }
+  dd {
+    padding-left: 0;
+  }
+
+  // Membership badges
+  .da-membership-badge {
+    @include span-columns(2,3);
+    img {
+      width: 100%; // IE SVG scaling.
+    }
+  }
+
+  .user-picture-container {
+    float: right;
+  }
+  .user-picture {
+    // Reset core styles.
+    float: none;
+    margin: 0;
+
+    img {
+      display: block;
+    }
+  }
+  .new-user {
+    @include new-user-badge;
+    line-height: 2.4;
+    width: $user-picture-width;
+  }
+}
+
+@media all and (min-width: 451px) {
+  .profile dl dt {
+    @include span-columns(2, 8);
+  }
+  .profile dl dd {
+    @include span-columns(6 omega, 8);
+    float: left;
+  }
+  .profile .picture {
+    margin-top: 6px;
+  }
+
+  // Membership badges
+  .profile .da-membership-badge {
+    @include span-columns(1,4);
+  }
+
+  .profile .da-membership {
+    @include span-columns(3 omega,4);
+  }
+  .profile dt {
+    clear: left;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media all and (min-width: 694px) {
+  // User profile pages, /user/N
+  .profile {
+    .main {
+      @include span-columns(6);
+      // Remove when profile fields are migrated.
+      dl {
+        @include clearfix;
+        margin: 0;
+        dt {
+          @include span-columns(2, 6);
+        }
+        dd {
+          @include span-columns(4 omega, 6);
+          float: left;
+        }
+      }
+      // Remove when profile fields are migrated.
+      dt {
+        clear: left;
+        margin: 0 10px 0 0;
+      }
+      dd {
+        padding: 0;
+        margin-bottom: 0.692em;
+      }
+    }
+
+    .contact {
+      @include span-columns(3);
+
+      .user-picture-container {
+        float: none;
+      }
+
+      .field {
+        margin-bottom: 1.3846em;
+      }
+      .field-name-field-organization-name, .field-name-field-job-title {
+        margin-bottom: 0;
+      }
+      .field-name-field-organizations>.field-items>.field-item {
+        margin-bottom: .6923em;
+      }
+    }
+
+    .aside {
+      @include span-columns(3 omega);
+
+      .da-membership-badge {
+        @include span-columns(2, 3);
+      }
+
+      // Grid of user pictures.
+      .field-name-field-mentors {
+        @include clearfix;
+        .field-item {
+          @include span-columns(1, 3);
+          @include nth-omega(3n);
+          margin-bottom: gutter(3);
+          line-height: 0;
+        }
+      }
+    }
+  }
+}
+
+// Starred projects.
+.view-starred-projects {
+  @include breakpoint($medium) {
+    @include span-columns(8);
+  }
+
+  h3 {
+    display: inline;
+  }
+
+  .stars {
+    @include smaller;
+    background: url(../images/icon-dk-gray-star-fill.svg) transparent left center / 1em no-repeat;
+    display: inline-block;
+    padding: .3em 0 .1em 1.25em;
+    margin-left: .5em;
+  }
+}

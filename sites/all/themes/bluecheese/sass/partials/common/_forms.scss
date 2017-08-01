@@ -1,0 +1,212 @@
+// Keep form elements on the baseline grid.
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 0 0.5ex;
+}
+
+.form-item {
+  margin-top: 0; // Reset core style.
+}
+
+// Regular spacing between elements.
+.form-item,
+.form-wrapper,
+.form-item-title,
+.text-format-wrapper {
+  margin-bottom: (9em / 13);
+  // No spacing at the bottom of containers, like fieldsets.
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.filter-wrapper {
+  margin-bottom: 0;
+}
+.text-format-wrapper .description {
+  margin: 0;
+}
+
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin: 0.25em 0;
+}
+.form-item {
+  label {
+    font-weight: bold;
+    &.option {
+      font-weight: normal;
+    }
+  }
+}
+
+.fieldset-description,
+.description {
+  color: darken($grey, 20%);
+  font-size: 0.8125em;
+}
+
+.form-type-radio, .form-type-checkbox {
+  // Refine core style, no margin for inline descriptions.
+  span.description {
+    margin-left: 0;
+  }
+}
+
+input, textarea, select {
+  margin: 0;
+  // Limit width to inside parent containers.
+  max-width: 100%;
+}
+
+// Make text inputs a little more aesthetically pleasing.
+.form-text,
+.form-textarea {
+  border: 1px solid $grey;
+  padding: 5px;
+}
+// Adjust autocomplete icon to match new positions.
+html.js input.form-autocomplete {
+  background-position: 99% 6px;
+  &.throbbing {
+    background-position: 99% -14px;
+  }
+}
+
+// link button (green button)
+a.link-button,
+input[type="submit"],
+button {
+  @include large-button;
+  display: inline-block;
+  padding: 0 1em;
+  overflow: hidden;
+  text-align: center;
+}
+
+input[type="submit"] {
+  font-size: 0.92307em;  // 1 * 0.92307 = 12px
+  padding: 0 1em;
+  line-height: 2.008em; // 24px tall, baselines aligned with following text.
+  margin-right: 0.615384em; // For multiple buttons, and following text.
+  -webkit-appearance: none; // iOS Safari reset.
+}
+
+.link-button {
+  line-height: 36px;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input.default {
+  color: nth($greys, 5);
+}
+
+// File upload fields
+.form-managed-file .form-file {
+  margin-right: 1em;
+}
+
+// Draggable tables of files
+
+
+// Changed draggable rows (usually constains <span class="warning">)
+tr.odd, tr.even {
+  &.drag-previous {
+    background: $light-yellow;
+  }
+}
+
+form .field-multiple-table td.field-multiple-drag {
+  width: 40px;
+}
+
+form .field-multiple-table td.field-multiple-drag a.tabledrag-handle {
+  padding-right: 0;
+}
+
+tr.draggable span.warning {
+  margin-left: 0;
+}
+
+.vertical-tabs fieldset.vertical-tabs-pane {
+  padding: 0.692em 1em;
+}
+
+// Improve form element usability on narrow devices.
+@media all and (max-width: $medium) {
+  input[type="submit"] + input[type="submit"]  {
+  margin-left: 0;
+  }
+  input.form-autocomplete,
+  input.form-text,
+  input.form-tel,
+  input.form-email,
+  input.form-url,
+  input.form-search,
+  input.form-number,
+  input.form-color,
+  input.form-file,
+  textarea.form-textarea {
+    @include box-sizing(border-box);
+    width: 100%;
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+  .form-select {
+    @include box-sizing(border-box);
+    width: 100%;
+  }
+  .form-text.form-autocomplete {
+    height: 26px; // Should use em instead?
+  }
+  .form-actions input,
+  .form-wrapper input[type="submit"],
+  .page-project-issues .views-exposed-form .views-exposed-widget .form-submit {
+    float: none;
+    margin-right: 0;
+    margin-top: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: normal;
+  }
+  .exposed-filters .filters,
+  .exposed-filters .form-item label,
+  .exposed-filters .form-select {
+    float: none;
+    margin-bottom: 2px;
+    width: 100%;
+  }
+  fieldset .fieldset-legend {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .views-exposed-form .views-exposed-widget {
+    float: none;
+  }
+}
+
+// User profile edit form, /user/N/edit
+#user-profile-form {
+  // First and last name in 1 row.
+  .group-name {
+    @include clearfix;
+    .field-name-field-first-name {
+      float: left;
+      margin-right: 1em;
+    }
+  }
+
+  .group-name,
+  .field-name-field-organizations {
+    .form-type-textfield input {
+      width: 20em; // Override core's 100%
+    }
+  }
+}

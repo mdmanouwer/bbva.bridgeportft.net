@@ -1,0 +1,80 @@
+#content .node {
+  margin-bottom: 1.385em; // * 13 = 18px
+}
+
+#content .node-sticky {
+  background-color: $pale-yellow;
+  padding: 10px;
+}
+#content .node-sticky h2.node-title {
+  margin-top: 0;
+}
+
+#content-top-region,
+#content,
+#content-bottom-region,
+#aside-region,
+#sidebar-first-region {
+  margin-bottom: 13px;
+}
+
+#content .submitted,
+#content .modified,
+#aggregator .feed-item-meta,
+#content .comment .links {
+  color: $dark-grey;
+  font-size: 0.923em; // 0.92307 * 13px = 12px
+  line-height: 1.5em; // * 12px = 18px
+  margin-bottom: 0.75em;
+}
+
+// Submitted time on nodes and comments
+.submitted time {
+  font-style: italic;
+}
+
+body.page-node #content .tabs ul.tabs li {
+  float: left;
+  display: block;
+  font-size: 0.92307em; // 0.92307 * 13px = 12px
+  margin: 0 5px;
+  padding: 1px 4px;
+  text-decoration: none;
+}
+body.page-node #content .tabs ul.tabs li.active {
+  display: none;
+}
+
+.feed-source,
+#content .node-footer,
+#aggregator .feed-item-categories,
+.node .support,
+.field-field-assoc-benefit-restrictions,
+#block-drupalorg-handbook-license {
+  @include smaller;
+}
+
+.cke_editable {
+  padding: 1em;
+}
+
+div.codeblock,
+pre.codeblock,
+pre[class*="language-"], pre.cke_widget_element {
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 0.25em;
+  color: $new-dk-gray;
+  margin-bottom: .5em;
+  padding: 0.25em 0.75em;
+}
+
+// Dots between links at the bottom of book, forum nodes
+.node-footer .links li + li:before {
+  content: " ⋅ ";
+}
+
+// Node revisions table
+.revision-log {
+  @include force-wrap;
+}

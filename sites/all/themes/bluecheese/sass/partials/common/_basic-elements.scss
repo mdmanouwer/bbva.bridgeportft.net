@@ -1,0 +1,338 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700,400,300);
+
+body {
+  @include content-font;
+  color: $body-text;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8125em; // 16px x .8125 = 13px
+  line-height: 1.384615em; // 13px x 1.384615 = 18px
+  min-height: 100vh;
+  word-wrap: break-word;
+}
+
+caption,
+th,
+td,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset {
+  font-family: inherit;
+  line-height: 1.384615em; // 13px x 1.384615 = 18px
+}
+
+textarea {
+  font-size: 1em;
+}
+
+h1,
+.h1 {
+  @include header-font;
+  color: $black;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1.385em;
+  margin: 0 0 0.692em;
+}
+
+h2, .h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include header-font;
+  font-weight: bold;
+  font-size: 1.231em; // * 13px = 16px
+  line-height: 1.6875em; // * 16px = 27px
+  margin: 0 0 0.5625em;
+}
+h3.top { // For the top of columns
+  margin-top: 0;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-size: 1em; // 1 * 13  = 13
+  line-height: 1.385em;
+  font-weight: bold;
+  margin: 0.5em 0 0.166667em;
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  color: $dark-grey;
+}
+
+p {
+  margin-bottom: 1.385em;
+}
+
+a,
+a:visited,
+a:active {
+  color: $dark-blue;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $dark-blue;
+  text-decoration: underline;
+}
+
+// todo may no longer be needed, used on /start
+a.all {
+  font-weight: bold;
+}
+
+a.tabledrag-handle .handle {
+  height: 2em;
+  width: 2em;
+}
+
+code,
+tt,
+pre {
+  @include monospace-font;
+  white-space: pre-wrap;
+}
+
+code,
+tt {
+  font-size: (12em / 13);
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+blockquote {
+  margin: 1.384em 40px 1.384em 20px;
+  padding-left: 30px;
+
+  &:before {
+    color: $new-blue;
+    content: '“';
+    float: left;
+    font-size: 3em;
+    margin: .2em 0 0 -.6em;
+  }
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+  &:before {
+    content: open-quote;
+  }
+  &:after {
+    content: close-quote;
+  }
+}
+
+acronym {
+  border-bottom: 1px dotted $dark-grey;
+}
+
+sup {
+  font-size: 0.769em; // * 13 = 10pt
+  line-height: 0;
+  vertical-align: super;
+}
+sub {
+  font-size: 0.923em; // * 13 = 12pt
+  line-height: 0;
+  vertical-align: sub;
+}
+
+small {
+  font-size: 0.923em; // * 13 = 12pt
+}
+
+// Prevent hiding content via multiple nested tags
+sup sup sup, sub sub sub, small small small {
+  font-size: 9px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  vertical-align: baseline
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $new-gray;
+  height: 1px;
+}
+
+dl {
+  margin-bottom: 0.692em;
+}
+dt {
+  font-weight: bold;
+  margin: 0.692em 0 0;
+}
+
+dl.documentation {
+  dt {
+    font-size: 1.23076em; // 1.23076 * 13 = 16px
+    margin-top: 0.563em;
+  }
+  dd {
+    padding-left: 0;
+  }
+}
+
+fieldset {
+  border: 1px solid $new-gray;
+  padding: 0.692em;
+  margin: 0 0 1.384em 0;
+  legend {
+    padding: 0 0.25em;
+  }
+  // The collapsed fieldsets have a set height, reset it so it can be styled.
+  html.js &.collapsed {
+    height: auto;
+  }
+  // Tables inside fieldsets should have full width (for aesthetics).
+  table:not(.sticky-headers) {
+    width: 100%;
+  }
+  // General site-wide fieldset styling, not including specialized types.
+  &:not(.filter-wrapper):not(.vertical-tabs-pane):not(#edit-advanced) {
+    background: $pale-yellow;
+    border: none;
+    // Make legends and their links fully clickable and adjust the collapsed or
+    // expanded icon to match new positions.
+    legend {
+      padding: 0;
+      margin-bottom: .692em;
+      float: left;
+      // Make sure the next sibling clears the legend's floats.
+      + * {
+        clear: both;
+      }
+    }
+    html.js &.collapsible {
+      legend {
+        width: 100%;
+      }
+      .fieldset-legend {
+        background-position: 10px 60%;
+        margin: -0.692em;
+        padding: 0;
+      }
+      &.collapsed {
+        padding-bottom: 0;
+        .fieldset-legend {
+          background-position: 10px 50%;
+        }
+      }
+      .fieldset-title {
+        display: inline-block;
+        padding: .692em .692em .692em 1.75em;
+        width: 100%;
+      }
+    }
+    // Normal fieldsets do not need a summary (which affects styling).
+    // These are only for vertical tabs.
+    .summary {
+      display: none;
+    }
+  }
+
+  // Make buttons more aesthetically pleasing inside fieldsets.
+  a.link-button,
+  input[type="submit"],
+  button {
+    background: $new-dk-gray;
+    border: 2px solid $new-dk-gray;
+  }
+
+  // Adjust core filter module's styling on text formats for aesthetics.
+  &.filter-wrapper {
+    border-color: $light-grey;
+    padding: 0.692em;
+    legend {
+      display: none;
+    }
+    // !important needed here to override JS collapsed element attributes.
+    .fieldset-wrapper {
+      display: block !important;
+    }
+    // Reset borders.
+    html.js &.collapsed {
+      border-width: 1px;
+      border-top: 0;
+    }
+    .form-item {
+      padding: 0;
+    }
+  }
+  .filter-guidelines {
+    display: none;
+  }
+  .filter-help {
+    margin: 0;
+    padding: .1em 0;
+  }
+}
+
+// New fonts & elements.
+.node-type-guide, .node-type-documentation, .node-type-page, .node-type-section, .node-type-post, .page-download {
+  @include new-font;
+  font-size: 1em;
+
+  h1, h2, h3, h4, h5, h6 {
+    @include new-font;
+  }
+  h1, h2 {
+    color: $new-dk-blue;
+    font-weight: 300;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.2em;
+  }
+
+  #nav-header {
+    font-size: 0.95em;
+  }
+
+  #block-drupalorg-announcements,
+  .button-link {
+    font-size: 1em;
+  }
+}

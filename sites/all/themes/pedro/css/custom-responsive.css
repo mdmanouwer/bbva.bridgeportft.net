@@ -1,0 +1,14 @@
+@media only screen and (max-width:320){
+	i.fa fa-reorder{
+		font-size: 24px;
+        color: #0b54a3;
+
+	}
+	button.btn.btn-navbar.tb-megamenu-button.menuIstance-processed{
+		border:none;
+		border-left:1px solid #000000;
+	}
+	div#imageunder > img.img-responsive{
+		margin-top:-186px;
+	}
+}

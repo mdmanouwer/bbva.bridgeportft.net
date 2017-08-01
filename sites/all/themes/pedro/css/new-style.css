@@ -1,0 +1,60 @@
+.margin-top-percent-15 {
+    margin-top: 15%;
+}
+
+
+.margin-left-percent-5 {
+    margin-left: 5%;
+}
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px;
+}
+
+
+.margin-top-percent-7 {
+    margin-top: 7%;
+}
+
+.margin-top-percent-2 {
+    margin-top: 2%;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
+div#reports-lbl-hero {
+    height: 50vw;
+    max-height: 800px;
+}
+h4, .h4, h4 p, .h4 p {
+    font-size: 2.6rem;
+}
+.font-size-subtitulo {
+    font-size: 18px;
+    font-family: "bold";
+}
+div#flexslider-1 ul li{    height: 50vw; max-height: 800px; }
+
+[style*="background"][class*="hero"], [style*="background"][id*="hero"] {
+    height: 50vw;
+    max-height: 800px;
+}
+
+
+@media (max-width: 1024px){
+
+#reports-lbl-mobile .reports-card {
+    background: #ACB3B9;
+    position: relative;
+    margin: 0 20px;
+    top: -40px;
+}
+
+}
