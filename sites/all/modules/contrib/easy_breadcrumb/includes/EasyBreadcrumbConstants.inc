@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * Module's contants.
  */
 
 /**
- * EasyBreadcrumb module's contants
+ * EasyBreadcrumb module's contants.
  */
 class EasyBreadcrumbConstants {
 
@@ -30,7 +31,12 @@ class EasyBreadcrumbConstants {
   const DB_VAR_EXCLUDED_PATHS = 'easy_breadcrumb-excluded_paths';
 
   /**
-   *  Separator between segments.
+   * List of titles to be replaced.
+   */
+  const DB_VAR_REPLACED_TITLES = 'easy_breadcrumb-replaced_titles';
+
+  /**
+   * Separator between segments.
    */
   const DB_VAR_SEGMENTS_SEPARATOR = 'easy_breadcrumb-segments_separator';
 
@@ -94,6 +100,11 @@ class EasyBreadcrumbConstants {
    * Use the segment text as the title instead of main page title.
    */
   const DB_VAR_SEGMENT_TEXT_AS_TITLE = 'easy_breadcrumb-segment_text_as_title';
+
+  /**
+   * Transformation mode for crumbs without HTML tags.
+   */
+  const DB_VAR_HTML_TAGS = 'easy_breadcrumb-html_tags';
 
   /**
    * Variables for truncator.
