@@ -8464,9 +8464,4 @@ div.col-md-12.breadcrumb{
 	
 }
 
-
-body{
-    background:red !important;
-}
-
 @media (max-width: 320px){		i.fa.fa-reorder{		font-size: 24px;        color: #0b54a3;	}	button.btn.btn-navbar.tb-megamenu-button.menuIstance-processed{		margin-top:-26px;		border:none;		border-left:1px solid #000000;	}	div.col-md-9.menu-height{		height:auto;	}	div#slider {    margin-top: 69px;	min-height:775px;	max-height:900px;	     }		div#imageunder{		margin-bottom:70px;		margin-top:0px;	}	div.linea{		border-bottom: 1px solid #084fa2;	}	div#textover > p > span{		margin:2px;	}	div.gama-producto > div.col-xs-12{		margin:2px auto;	}	#block-views-bannervertical-block > div > div.view-content > div#views-bootstrap-grid-1.views-bootstrap-grid-plugin-style{		margin:0 auto;	}	#views-bootstrap-grid-2 .views-field.views-field-nothing{		margin-top:4px;		margin-bottom:4px;	}	a.InformeVantagensButton{		width: 55.396vw !important;	}	div.col-md-4.col-sm-12.red-social > span{		display:none;	}	button.fa{		width:53px;	}	section#block-menu-menu-footer-menu.block .block-menu .clearfix > ul.menu.nav > li {	font-family: regular;    font-size: 22px;    font-weight: 700;    line-height: 1.186;    color: #98abb9;    padding: 43px 0px !important;    display: block;    font-weight: bold;    text-align: center;    width: 100%;    border-top: 1px solid #364150;}}
