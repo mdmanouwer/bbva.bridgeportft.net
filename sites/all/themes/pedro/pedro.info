@@ -35,6 +35,7 @@ stylesheets[all][] = css/custom-font.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/new-style.css
 stylesheets[all][] = css/custom-responsive.css
+stylesheets[all][] = css/front-page.css
 
 
 ;;;;;;;;;;;;;;;;;;;;;

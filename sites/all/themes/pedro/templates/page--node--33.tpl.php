@@ -108,17 +108,41 @@
 
 
     <div class="container highlighted">
-	<?php if (!empty($page['highlighted'])): ?>
-        <div class="highlight"><?php print render($page['highlighted']); ?></div>
+	
+        <div class="highlight">
+             <div class="hidden-xs">
+           <?php $block = module_invoke('views', 'block_view', 'bannervertical-block');
+           print render($block['content']);
+          ?>
+                </div>
+            <div class="visible-xs-block">
+            <?php $block = module_invoke('views', 'block_view', 'bannervertical-block_1');
+           print render($block['content']);
+           
+           
+          ?>
+                </div>
+
+        </div>
 		
-      <?php endif; ?>
+    
 	  </div>
 <div class="clearfix"></div>
 
 <div  id="slider-middle" class="row">
-<?php if (!empty($page['slider_middle'])): ?>
-        <?php print render($page['slider_middle']); ?>
-      <?php endif; ?>
+<div class="hidden-xs">
+           <?php $block = module_invoke('views', 'block_view', 'bannervertical-block');
+           print render($block['content']);
+          ?>
+                </div>
+            <div class="visible-xs-block">
+            <?php $block = module_invoke('views', 'block_view', 'bannervertical-block_1');
+           print render($block['content']);
+           
+           
+          ?>
+                </div>
+
 	  
 
 

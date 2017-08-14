@@ -74,34 +74,39 @@
  */
 ?>
 <div class="header" id="fixtop">
-<div  id="topfixed" class="row">
-<div class="col-md-8">
+<div  id="topfixed" class="row hidden-xs">
+<div class="col-md-9">
 </div>
-<div class="col-md-2" id="top-right_menu"><?php print render($page['top_bar']); ?></div>
-<div class="col-md-2"> <?php print render($page['top_bar_lan']);?></div>
+<div class="col-md-2 top-right-menu" id="top-right_menu"><?php print render($page['top_bar']); ?></div>
+<div class="col-md-1  lan-switch-menu"> <?php print render($page['top_bar_lan']);?></div>
 </div>
 <div class="row" id="mega-menu-region">
-<div class="logo col-md-3 col-xs-10 ">
+      <div class="logo col-md-3 col-xs-10">
       <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
-
-      <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
+      
         </div>
-		<div class="col-md-9 menu-height">
+		
+		<div class="col-md-9  col-xs-2 menu-height">
       
         <?php if (!empty($page['navigation'])): ?>
             <?php print render($page['navigation']); ?>
           <?php endif; ?>
-      
-    </div>
+        
+        </div>
+	<div class="col-md-12 hidden-xs breadcrumb">
+	<?php
+  $block = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
+  print $block['content'];
+?>
+	</div>
 
 </div>
 </div>
+
 
 <div  id="slider" class=""row"><?php print render($page['slider']);?></div>
 <div class="clearfix"></div>

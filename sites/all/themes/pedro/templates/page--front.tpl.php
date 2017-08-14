@@ -73,6 +73,7 @@
  * @ingroup templates
  */
 ?>
+
 <div class="header" id="fixtop">
 <div  id="topfixed" class="row hidden-xs">
 <div class="col-md-9">
@@ -97,12 +98,6 @@
           <?php endif; ?>
         
         </div>
-	<div class="col-md-12 hidden-xs breadcrumb">
-	<?php
-  $block = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
-  print $block['content'];
-?>
-	</div>
 
 </div>
 </div>
@@ -113,57 +108,89 @@
 
     <div class="container highlighted">
 	<?php if (!empty($page['highlighted'])): ?>
-        <div class="highlight"><?php print render($page['highlighted']); ?></div>
+        <div class="highlight">
+            <div class="hidden-xs">
+           <?php $block = module_invoke('views', 'block_view', 'consumer_fiance-block');
+           print render($block['content']);
+          ?>
+                </div>
+            <div class="visible-xs-block">
+            <?php $block = module_invoke('views', 'block_view', 'consumer_fiance-block_1');
+           print render($block['content']);
+           
+          ?>
+                </div>
+        </div>
+        
 		
       <?php endif; ?>
 	  </div>
-<div class="clearfix"></div>
-
-<div  id="slider-middle">
-<?php if (!empty($page['slider_middle'])): ?>
-        <?php print render($page['slider_middle']); ?>
-      <?php endif; ?>
-	  
 
 
+
+
+
+
+<div class="field-collection-container clearfix">
+    <div class="row background-partners text-center" style="background-image: url(sites/all/themes/pedro/images/fondo_partners_1.jpg);">
+    <div class="col-md-12 col-xs-12">
+        <div class="font-size-antetitulo font-regular margin-top-110 margin-left-70 margin-right-70" style="color: #d9f4ff; text-transform: uppercase; max-height: 16px; overflow: hidden;">
+            PARTNERS        </div>
+        <span class="linea"></span>
+        <div class="titulo margin-left-70 margin-right-70">
+            <h5 class="font-color-white font-size-titulo-seccion">
+                <p>A strong and lasting relationship</p>            </h5>
+        </div>
+        <div class="row row-centered margin-top-45 margin-bottom-50">
+            <div class="margin-logos-partner">
+                               
+<?php 
+
+$block = module_invoke('views', 'block_view','partners-block');
+print render($block);
+?>
+
+                                </div>
+        </div>
+        <div class="calls">
+            <a class="btn _pxp-cta _pxp-verde _pxp-255 margin-right-3 EnviadoPartnerOK" href="/en/contact" title="BECOME A PARTNER NOW!">
+                <span class="text font-size-botones">
+                    BECOME A PARTNER NOW!                </span>
+            </a>
+            <a class="btn _pxp-cta _pxp-gris-3 _pxp-255" href="/en/partners" title="ALL OUR PARTNERS">
+                <span class="text font-size-botones">
+                    ALL OUR PARTNERS                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+var Drupal = Drupal || {};
+
+(function($, Drupal){
+
+    $(document).ready(function() {
+        $('img-responsive').hover(
+            function () {
+                var hover = $(this).data('hover');
+                $(this).find('img').attr("src", hover);
+            },
+            function () {
+                var out = $(this).data('out');
+                $(this).find('img').attr("src", out);
+            }
+        )
+    });
+
+})(jQuery, Drupal);
+</script>
 </div>
 
- <div class="sidebar-second">
-
-<?php if (!empty($page['sidebar_second'])): ?>
-      
-       <?php print render($page['sidebar_second']); ?>
-        <!-- /#sidebar-second -->
-    <?php endif; ?>
-</div>
-
-<div class="main-container">
-  <div class="row">
-
-    
-    
-      
-     
-      
-      <?php print render($page['content']); ?>
-   
-
-    
-
-  
 
 
 
-<div  id="slider-middle" >
-<?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-	  
 
 
-</div>
-</div>
-</div>
 <div class="row">
 <div id="footer">
 <div class="section">
@@ -225,3 +252,7 @@
 			</div>
 </div>
 </div>
+
+  
+
+
