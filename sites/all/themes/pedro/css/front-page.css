@@ -15447,7 +15447,6 @@ input.cmn-toggle-round:checked + label:after {
 #topfixed .leaf a.active {
   text-decoration: none;
   color: #b7ccdf;
-  border-bottom: 4px solid #b7ccdf;
 }
 #topfixed .block {
   /* &:extend(.wauto); */
@@ -19894,7 +19893,7 @@ option:not(:checked) {
   z-index: 1;
   text-align: center;
   top: 15%;
-  left: 90%;
+  left: 87%;
 }
 .carousel-indicators-slider-home .imagePager img {
   opacity: 0.3;
